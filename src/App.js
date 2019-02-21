@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ToDoList from './ToDoList';
+// import logo from './logo.svg';
+// import './App.css';
 
 class App extends Component {
+
+  state = {
+    list: [
+      {id: 1, name: "Walk the dog",    complete: false },
+      {id: 2, name: "Shovel the snow", complete: true  },
+      {id: 3, name: "Finish Skillpod", complete: false }
+    ]
+  }
+
+  // We'll render the ToDoList and pass it our task list
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <ToDoList todo={this.state.list} />
     );
   }
 }
